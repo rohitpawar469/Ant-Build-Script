@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="env-variables" basedir="." default="print-envVariables">
+		
+	<target name="print-envVariables">
+		<echo>${user.country}</echo>
+		
+	</target>
+</project>
