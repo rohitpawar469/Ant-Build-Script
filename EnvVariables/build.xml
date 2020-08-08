@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="env-variables" basedir="." default="print-envVariables">
+	<property environment="env"/>	
+	<target name="print-envVariables">
+		<echo>${env.PROCESSOR_IDENTIFIER}</echo>
+		<echo>${env.ANT_HOME}</echo>
+	</target>
+</project>
