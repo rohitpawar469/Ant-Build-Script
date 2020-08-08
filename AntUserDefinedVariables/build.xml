@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="userdefinedvariables" basedir="." default="print-usrdefinedvaraibles">
+	<property name="tomcat.server.version" value="9"></property>
+	<property name="java.version" value="8"></property>
+	<target name="print-usrdefinedvaraibles">
+		<echo>tomcat version : ${tomcat.server.version}</echo>
+		<echo>tomcat version : ${java.version}</echo>
+	</target>
+</project>
