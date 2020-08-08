@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="automobile-dealer" basedir="." default="init">
+ 	<property file="build.properties" />
+	<target name="init" depends="clean,createdir,compile,package,run"></target>
+	
+	<target name="clean">
+		<delete dir="${classes.dir}" ></delete>
+		<delete dir="${dist.dir}"></delete>
+		<delete dir="${build.dir}"></delete>
+	</target>
+	
+	<target name="createdir">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${classes.dir}"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
+	
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}"></javac>
+	</target>
+	
+	<target name="package">
+		<jar basedir="${classes.dir}" destfile="${dist.dir}${file.separator}${ant.project.name}.jar"></jar>	
+	</target>
+	
+	<target name="run">
+		<java classname="com.automobiles.reports.AnnualSalesReport" classpath="${dist.dir}${file.separator}${ant.project.name}.jar"></java>
+	</target>
+	
+</project>
+
