@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="First_Ant_Using_Java" basedir="." default="run">
+	<target name="clean" >
+		<delete dir="build/classes" />
+		<delete dir="build" />
+	</target>
+	
+	<target name="createdirs" depends="clean">
+		<mkdir dir="build" />
+		<mkdir dir="build/classes" />
+	</target>
+	
+	<target name="compile" depends="createdirs">
+		<javac srcdir="src" destdir="build/classes" />
+	</target>
+	
+	<target name="run" depends="compile">
+		<java classname="com.bja.test.Runner" classpath="build/classes" />
+	</target>	
+</project>
