@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="filelist" basedir="." default="init">
+ 	<property file="build.properties"></property>
+	
+	<filelist id="fl1" dir="${src.dir}"> 
+		<file name="global.properties"/>
+		<file name="modules.txt"/>
+	</filelist>
+	
+	<target name="init" depends="clean,createdir,copyfiles"></target>
+	<target name="clean">
+		<delete dir="${classes.dir}"></delete>
+		<delete dir="${build.dir}"></delete>
+	</target>	
+	<target name="createdir">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+	</target>
+	<target name="copyfiles">
+		<copy todir="${classes.dir}">
+			<filelist refid="fl1"/>
+		</copy>
+	</target>	
+	</project>
