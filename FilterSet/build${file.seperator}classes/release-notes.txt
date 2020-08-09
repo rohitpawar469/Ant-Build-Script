@@ -1,0 +1,4 @@
+Name=NetBanking
+Description=Net Banking services for bank account holders
+Organisation=Swiss Bank
+Version=1.3
